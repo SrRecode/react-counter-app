@@ -1,0 +1,143 @@
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --line: #272c37;
+  --text: #eef2f7;
+  --muted: #8a93a6;
+  --accent: #7c9cff;
+  --accent-strong: #5f83ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 50% 0%, #1c2233, var(--bg) 65%);
+}
+
+.app {
+  width: min(420px, 100%);
+  text-align: center;
+}
+
+.app__header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.app__header p {
+  margin: 6px 0 26px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.count {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  transition: transform 0.12s ease, color 0.12s ease;
+}
+
+.count--up {
+  color: #6ee7a8;
+  transform: translateY(-3px) scale(1.03);
+}
+
+.count--down {
+  color: #ff9a9a;
+  transform: translateY(3px) scale(0.98);
+}
+
+.count__range {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 28px 0 20px;
+}
+
+.btn {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--text);
+  border-radius: 14px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
+}
+
+.btn--lg {
+  width: 68px;
+  height: 68px;
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.btn--ghost {
+  padding: 12px 22px;
+}
+
+.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: #1d2330;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.steps__label {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-right: 4px;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.chip--active {
+  color: #0b1020;
+  background: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+.chip:hover:not(.chip--active) {
+  color: var(--text);
+  border-color: var(--accent);
+}
